@@ -1,0 +1,26 @@
+#tomcat端口
+server:
+ port: 8090
+
+#springMVC的配置
+
+#视图前缀
+#视图后缀
+#kafka相关配置
+spring:
+  mvc:
+    view:
+      prefix: /html/
+      suffix: .html
+  kafka:
+    bootstrap-servers: 192.168.142.131:9091,192.168.142.131:9092,192.168.142.131:9093
+    consumer:
+      group-id: 0
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      batch-size: 12800
+      buffer-memory: 102400
+
